@@ -1,0 +1,184 @@
+Module-2: GIT Assignment - 3
+=============================
+You have been asked to:
+
+Create a git working directory, with the following branches
+	○ Develop
+	○ F1
+	○ f2
+● In the master branch, commit main.txt file
+● Put develop.txt in develop branch, f1.txt and f2.txt in f1 and f2 respectively
+● Push all these branches to github
+● On local delete f2 branch
+● Delete the same branch on github as well
+
+-------------------------------------------------------------------------------------------
+
+Git $ mkdir git_assn3
+
+Git $ cd git_assn3
+
+Git $ git init
+Initialized empty Git repository in C:/Users/User/git_assn3/.git/
+
+Git $ touch main.
+
+Git $ git add main.txt
+
+Git $ git commit -m "main file added in master branch"
+[master 5aa3d8e] main file added in master branch
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 main.txt
+
+Git $ git branch Develop
+Git $ git branch F1
+Git $ git branch f2
+
+Git $ git branch
+  Develop
+  F1
+  f2
+* master
+
+Git $ git checkout Develop
+Switched to branch 'Develop'
+
+Git $ touch develop.txt
+
+Git $ git add develop.txt
+
+Git $ git commit -m "develop file added in develop branch"
+[Develop e6f0fde] develop file added in develop branch
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 develop.txt
+ 
+Git $ git status
+On branch Develop
+nothing to commit, working tree clean
+
+Git $ git branch
+* Develop
+  F1
+  f2
+  master
+
+Git $ git switch F1
+Switched to branch 'F1'
+
+Git $ touch f1.txt
+
+Git $ git add f1.txt
+
+Git $ git commit -m "f1 file added in F1 branch"
+[F1 09d229d] f1 file added in F1 branch
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 f1.txt
+
+Git $ git switch f2
+Switched to branch 'f2'
+
+Git $ git branch
+  Develop
+  F1
+* f2
+  master
+
+Git $ touch f2.txt
+
+Git $ git add f2.txt
+
+Git $ git commit -m "f2 file added in f2 branch"
+On branch f2
+nothing to commit, working tree clean
+
+Git $ git remote add origin https://github.com/saroj1012/Git_assn3.git
+
+Git $ git branch
+  Develop
+  F1
+* f2
+  master
+
+Git $ git switch master
+Switched to branch 'master'
+
+Git $ git push -u origin master
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (5/5), 429 bytes | 429.00 KiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/saroj1012/Git_assn3.git
+ * [new branch]      master -> master
+branch 'master' set up to track 'origin/master'.
+
+Git $ git branch Develop
+fatal: a branch named 'Develop' already exists
+Git $ git switch Develop
+Switched to branch 'Develop'
+
+Git $ git push -u origin Develop
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 257 bytes | 257.00 KiB/s, done.
+Total 2 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'Develop' on GitHub by visiting:
+remote:      https://github.com/saroj1012/Git_assn3/pull/new/Develop
+remote:
+To https://github.com/saroj1012/Git_assn3.git
+ * [new branch]      Develop -> Develop
+branch 'Develop' set up to track 'origin/Develop'.
+
+Git $ git switch F1
+Switched to branch 'F1'
+
+Git $ git push -u origin F1
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 246 bytes | 246.00 KiB/s, done.
+Total 2 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'F1' on GitHub by visiting:
+remote:      https://github.com/saroj1012/Git_assn3/pull/new/F1
+remote:
+To https://github.com/saroj1012/Git_assn3.git
+ * [new branch]      F1 -> F1
+branch 'F1' set up to track 'origin/F1'.
+
+Git $ git switch f2
+Switched to branch 'f2'
+
+Git $ git push -u origin f2
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'f2' on GitHub by visiting:
+remote:      https://github.com/saroj1012/Git_assn3/pull/new/f2
+remote:
+To https://github.com/saroj1012/Git_assn3.git
+ * [new branch]      f2 -> f2
+branch 'f2' set up to track 'origin/f2'.
+
+Git $ git branch
+  Develop
+  F1
+* f2
+  master
+  
+Git $ git switch master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+Git $ git branch -d f2
+Deleted branch f2 (was 44ccab0).
+
+Git $ git push origin --delete f2
+To https://github.com/saroj1012/Git_assn3.git
+ - [deleted]         f2
+
+Git $
